@@ -1,6 +1,6 @@
 {
   "name": "vue3-cookies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple Vue.js 3 plugin for handling browser cookies",
   "main": "dist/index.js",
   "scripts": {
