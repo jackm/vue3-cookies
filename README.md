@@ -6,33 +6,33 @@ A simple Vue.js 3 plugin for handling browser cookies, forked from https://githu
 
 ### Package Managers
 ```
-npm install vue-cookies --save
-
-// require
-var Vue = require('vue')
-Vue.use(require('vue-cookies'))
+npm install vue3-cookies --save
 
 // es2015 module
 import Vue from 'vue'
-import VueCookies from 'vue-cookies'
-Vue.use(VueCookies)
+import VueCookies from 'vue3-cookies'
 
-// set default config
-Vue.$cookies.config('7d')
+let app = createApp(App);
+app.use(VueCookies);
 
-// set global cookie
-Vue.$cookies.set('theme','default');
-Vue.$cookies.set('hover-time','1s');
+// Or to set default config:
+app.use(VueCookies, {
+    expireTimes: "30d",
+    path: "/",
+    domain: "",
+    secure: true,
+    sameSite: "None"
+});
+
+
+// set global cookie in component:
+this.$cookies.set('theme','default');
+this.$cookies.set('hover-time','1s');
 ```
 
 ## Api
 
 syntax format: **[this | Vue].$cookies.[method]**
-
-* Set global config
-```
-$cookies.config(expireTimes[,path[, domain[, secure[, sameSite]]])  // default: expireTimes = 1d, path = '/', domain = '', secure = '', sameSite = 'Lax'
-```
 
 * Set a cookie
 ```
@@ -60,17 +60,26 @@ $cookies.keys()  // return a array
 #### set global config
 ```
 // 30 day after, expire
-Vue.$cookies.config('30d')
+app.use(VueCookies, {
+    expireTimes: "30d",
+});
 
 // set secure, only https works
-Vue.$cookies.config('7d','','',true)
+app.use(VueCookies, {
+    expireTimes: "7d",
+    secure: true,
+});
 
 // 2019-03-13 expire
-this.$cookies.config(new Date(2019,03,13).toUTCString())
+app.use(VueCookies, {
+    expireTimes: new Date(2019,03,13).toUTCString(),
+});
 
 // 30 day after, expire, '' current path , browser default
-this.$cookies.config(60 * 60 * 24 * 30,'');
-
+app.use(VueCookies, {
+    expireTimes: 60 * 60 * 24 * 30,
+    path: "",
+});
 ```
 
 #### support json object
