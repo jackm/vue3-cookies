@@ -1,14 +1,9 @@
-# vue-cookies
+# vue3-cookies
 
-A simple Vue.js plugin for handling browser cookies
+A simple Vue.js 3 plugin for handling browser cookies, forked from https://github.com/cmp-cc/vue-cookies
 
 ## Installation
 
-### Browser
-```
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vue-cookies@1.7.4/vue-cookies.js"></script>
-```
 ### Package Managers
 ```
 npm install vue-cookies --save
@@ -221,3 +216,4 @@ this.$cookies.keys().forEach(cookie => this.$cookies.remove(cookie))
 
 [MIT](http://opensource.org/licenses/MIT)
 Copyright (c) 2016-present, cmp-cc
+Copyright (c) 2020-present, KanHarI
