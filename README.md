@@ -23,12 +23,27 @@ export default defineComponent({
     return { $cookies };
   },
   // <data, methods...>
+  mounted() {
+    let my_cookie_value = this.$cookies.get("myCoookie");
+    console.log(my_cookie_value);
+    this.$cookies.set("myCoookie", "abcdefg");
+  }
 }
-
+```
+Optional global cookies config:
+```
 // Optional - global config at main.ts / main.js
 // <main.ts OR main.js>
 
+import { globalCookiesConfig } from "vue3-cookies";
 
+globalCookiesConfig({
+  expireTimes: "30d",
+  path: "/",
+  domain: "",
+  secure: true,
+  sameSite: "None",
+});
 
 // <createApp(App).use(router).mount("#app");>, etc.
 
