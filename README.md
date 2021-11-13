@@ -29,7 +29,7 @@ export default defineComponent({
   // <data, methods...>
   
   mounted() {
-    let my_cookie_value = this.$cookies.get("myCoookie");
+    let my_cookie_value = this.cookies.get("myCoookie");
     console.log(my_cookie_value);
     this.cookies.set("myCoookie", "abcdefg");
   }
