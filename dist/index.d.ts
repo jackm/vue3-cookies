@@ -24,7 +24,7 @@ declare const _default: {
 export default _default;
 declare function globalCookiesConfig(options?: CookiesConfig): void;
 declare function useCookies(): {
-    $cookies: {
+    cookies: {
         config: (config: CookiesConfig) => void;
         get: (keyName: string) => string;
         set: (keyName: string, value: string, expireTimes?: string | number | Date, path?: string, domain?: string, secure?: boolean, sameSite?: string) => VueCookiesManager;
