@@ -13,7 +13,7 @@ OR
 yarn add vue3-cookies
 ```
 
-Usage - via composition API (recommended):
+## Usage - via composition API (recommended):
 
 ```
 // MyComponent.vue
@@ -30,7 +30,7 @@ export default defineComponent({
   }
 }
 ```
-Optional global cookies config:
+### Optional global cookies config:
 ```
 // Optional - global config at main.ts / main.js
 // <main.ts OR main.js>
@@ -49,7 +49,7 @@ globalCookiesConfig({
 
 ```
 
-Usage - as vue plugin
+## Usage - as vue plugin (legacy)
 
 ```
 // es2015 module
