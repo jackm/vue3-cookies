@@ -225,6 +225,13 @@ export default {
 
 let GLOBAL_COOKIES_MANAGER: VueCookiesManager | null = null;
 
+function globalCookiesConfig(options?: CookiesConfig) {
+  if (GLOBAL_COOKIES_MANAGER == null) {
+    GLOBAL_COOKIES_MANAGER = new VueCookiesManager();
+  }
+  GLOBAL_COOKIES_MANAGER.config(options);
+}
+
 function useCookies() {
   if (GLOBAL_COOKIES_MANAGER == null) {
     GLOBAL_COOKIES_MANAGER = new VueCookiesManager();
@@ -235,4 +242,4 @@ function useCookies() {
   return { $cookies };
 }
 
-export { useCookies };
+export { globalCookiesConfig, useCookies };

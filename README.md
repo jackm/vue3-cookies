@@ -13,6 +13,27 @@ OR
 yarn add vue3-cookies
 ```
 
+Usage - via composition API (recommended):
+
+```
+// MyComponent.vue
+export default defineComponent({
+  setup() {
+    const { $cookies } = useCookies();
+    return { $cookies };
+  },
+  // <data, methods...>
+}
+
+// Optional - global config at main.ts / main.js
+// <main.ts OR main.js>
+
+
+
+// <createApp(App).use(router).mount("#app");>, etc.
+
+```
+
 Usage - as vue plugin
 
 ```

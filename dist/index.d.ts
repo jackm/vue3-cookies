@@ -22,6 +22,7 @@ declare const _default: {
     install: (app: App, options?: CookiesConfig) => void;
 };
 export default _default;
+declare function globalCookiesConfig(options?: CookiesConfig): void;
 declare function useCookies(): {
     $cookies: {
         config: (config: CookiesConfig) => void;
@@ -32,4 +33,4 @@ declare function useCookies(): {
         keys: () => string[];
     };
 };
-export { useCookies };
+export { globalCookiesConfig, useCookies };

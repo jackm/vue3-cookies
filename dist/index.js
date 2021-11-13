@@ -185,6 +185,12 @@ export default {
     },
 };
 var GLOBAL_COOKIES_MANAGER = null;
+function globalCookiesConfig(options) {
+    if (GLOBAL_COOKIES_MANAGER == null) {
+        GLOBAL_COOKIES_MANAGER = new VueCookiesManager();
+    }
+    GLOBAL_COOKIES_MANAGER.config(options);
+}
 function useCookies() {
     if (GLOBAL_COOKIES_MANAGER == null) {
         GLOBAL_COOKIES_MANAGER = new VueCookiesManager();
@@ -192,4 +198,4 @@ function useCookies() {
     var $cookies = reactive(GLOBAL_COOKIES_MANAGER);
     return { $cookies: $cookies };
 }
-export { useCookies };
+export { globalCookiesConfig, useCookies };
