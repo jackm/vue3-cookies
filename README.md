@@ -17,18 +17,24 @@ yarn add vue3-cookies
 
 ```
 // MyComponent.vue
+<script>
+import { useCookies } from "vue3-cookies";
+
 export default defineComponent({
   setup() {
     const { $cookies } = useCookies();
     return { $cookies };
   },
+
   // <data, methods...>
+  
   mounted() {
     let my_cookie_value = this.$cookies.get("myCoookie");
     console.log(my_cookie_value);
     this.$cookies.set("myCoookie", "abcdefg");
   }
 }
+</script>
 ```
 ### Optional global cookies config:
 ```
