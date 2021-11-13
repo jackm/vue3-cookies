@@ -4,14 +4,15 @@
   "description": "A simple Vue.js 3 plugin for handling browser cookies",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --declaration",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"*/**.ts\" --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KanHarI/vue3-cookies.git"
   },
-  "keywords":[
+  "keywords": [
     "javascript",
     "vue",
     "cookie",
@@ -26,13 +27,21 @@
     "url": "https://github.com/KanHarI/vue3-cookies/issues"
   },
   "homepage": "https://github.com/KanHarI/vue3-cookies#readme",
-  "typings": "types/index.d.ts",
+  "typings": "dist/index.d.ts",
   "dependencies": {
     "is-mobile": "^2.2.2",
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "typescript": "^4.1.3",
-    "@types/node": "^14.14.17"
+    "@types/node": "^14.14.17",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.1.3"
   }
 }

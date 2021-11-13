@@ -8,6 +8,14 @@ A simple Vue.js 3 plugin for handling browser cookies, forked from https://githu
 ```
 npm install vue3-cookies --save
 
+OR
+
+yarn add vue3-cookies
+```
+
+Usage - as vue plugin
+
+```
 // es2015 module
 import Vue from 'vue'
 import VueCookies from 'vue3-cookies'

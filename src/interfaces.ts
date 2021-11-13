@@ -1,17 +1,11 @@
-import type {App} from "vue";
-
-/**
- * Cookies config
- */
-export interface CookiesConfig {
-  expireTimes: string | number | Date,
-  path?: string,
-  domain?: string,
-  secure?: boolean,
-  sameSite?: string
+interface CookiesConfig {
+  expireTimes: string | number | Date;
+  path?: string;
+  domain?: string;
+  secure?: boolean;
+  sameSite?: string;
 }
-
-export interface VueCookies {
+interface VueCookies {
   /**
    * Set global config
    */
@@ -20,18 +14,20 @@ export interface VueCookies {
   /**
    * Set a cookie
    */
-  set(keyName: string,
-    value: any,
+  set(
+    keyName: string,
+    value: string,
     expireTimes?: string | number | Date,
     path?: string,
     domain?: string,
     secure?: boolean,
-    sameSite?: string): this;
+    sameSite?: string
+  ): this;
 
   /**
    * Get a cookie
    */
-  get(keyName: string): any;
+  get(keyName: string): string;
 
   /**
    * Remove a cookie
@@ -49,9 +45,4 @@ export interface VueCookies {
   keys(): string[];
 }
 
-declare const _default : {
-  CookieConfig: CookiesConfig;
-  VueCookies: VueCookies;
-};
-
-export default _default;
+export { VueCookies, CookiesConfig };
