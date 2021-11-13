@@ -237,9 +237,9 @@ function useCookies() {
     GLOBAL_COOKIES_MANAGER = new VueCookiesManager();
   }
 
-  const $cookies = reactive<VueCookiesManager>(GLOBAL_COOKIES_MANAGER);
+  const cookies = reactive<VueCookiesManager>(GLOBAL_COOKIES_MANAGER);
 
-  return { $cookies };
+  return { cookies };
 }
 
 export { globalCookiesConfig, useCookies };

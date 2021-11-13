@@ -22,8 +22,8 @@ import { useCookies } from "vue3-cookies";
 
 export default defineComponent({
   setup() {
-    const { $cookies } = useCookies();
-    return { $cookies };
+    const { cookies } = useCookies();
+    return { cookies };
   },
 
   // <data, methods...>
@@ -31,7 +31,7 @@ export default defineComponent({
   mounted() {
     let my_cookie_value = this.$cookies.get("myCoookie");
     console.log(my_cookie_value);
-    this.$cookies.set("myCoookie", "abcdefg");
+    this.cookies.set("myCoookie", "abcdefg");
   }
 }
 </script>
