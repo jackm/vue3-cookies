@@ -13,10 +13,10 @@ import { reactive } from "vue";
 
 const defaultConfig: CookiesConfig = {
   expireTimes: "1d",
-  path: "; path=/",
+  path: "/",
   domain: "",
   secure: false,
-  sameSite: "; SameSite=Lax",
+  sameSite: "Lax",
 };
 
 class VueCookiesManager implements VueCookies {
@@ -149,12 +149,12 @@ class VueCookiesManager implements VueCookies {
       (domain
         ? "; domain=" + domain
         : this.current_default_config.domain
-        ? this.current_default_config.domain
+        ? "; domain=" + this.current_default_config.domain
         : "") +
       (path
         ? "; path=" + path
         : this.current_default_config.path
-        ? this.current_default_config.path
+        ? "; path=" + this.current_default_config.path
         : "; path=/") +
       (secure == undefined
         ? this.current_default_config.secure
@@ -165,7 +165,7 @@ class VueCookiesManager implements VueCookies {
         : "") +
       (sameSite == undefined
         ? this.current_default_config.sameSite
-          ? this.current_default_config.sameSite
+          ? "; SameSite=" + this.current_default_config.sameSite
           : ""
         : sameSite
         ? "; SameSite=" + sameSite
@@ -183,12 +183,12 @@ class VueCookiesManager implements VueCookies {
       (domain
         ? "; domain=" + domain
         : this.current_default_config.domain
-        ? this.current_default_config.domain
+        ? "; domain=" + this.current_default_config.domain
         : "") +
       (path
         ? "; path=" + path
         : this.current_default_config.path
-        ? this.current_default_config.path
+        ? "; path=" + this.current_default_config.path
         : "; path=/") +
       "; SameSite=Lax";
     return true;
