@@ -155,7 +155,7 @@ class VueCookiesManager implements VueCookies {
         ? "; path=" + path
         : this.current_default_config.path
         ? "; path=" + this.current_default_config.path
-        : "; path=/") +
+        : "") +
       (secure
         ? "; Secure"
         : this.current_default_config.secure
@@ -185,7 +185,7 @@ class VueCookiesManager implements VueCookies {
         ? "; path=" + path
         : this.current_default_config.path
         ? "; path=" + this.current_default_config.path
-        : "; path=/") +
+        : "") +
       "; SameSite=Lax";
     return true;
   }
