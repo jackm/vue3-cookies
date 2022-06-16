@@ -156,19 +156,15 @@ class VueCookiesManager implements VueCookies {
         : this.current_default_config.path
         ? "; path=" + this.current_default_config.path
         : "; path=/") +
-      (secure == undefined
-        ? this.current_default_config.secure
-          ? "; Secure"
-          : ""
-        : secure
+      (secure
+        ? "; Secure"
+        : this.current_default_config.secure
         ? "; Secure"
         : "") +
-      (sameSite == undefined
-        ? this.current_default_config.sameSite
-          ? "; SameSite=" + this.current_default_config.sameSite
-          : ""
-        : sameSite
+      (sameSite
         ? "; SameSite=" + sameSite
+        : this.current_default_config.sameSite
+        ? "; SameSite=" + this.current_default_config.sameSite
         : "");
     return this;
   }
