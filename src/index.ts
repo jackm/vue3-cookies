@@ -165,7 +165,7 @@ class VueCookiesManager implements VueCookies {
         : "") +
       (sameSite == undefined
         ? this.current_default_config.sameSite
-          ? "; SameSute=" + this.current_default_config.sameSite
+          ? this.current_default_config.sameSite
           : ""
         : sameSite
         ? "; SameSite=" + sameSite
